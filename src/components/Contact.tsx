@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GithubLogo, LinkedinLogo, EnvelopeSimple, PaperPlaneTilt, Clock, Sparkle } from '@phosphor-icons/react';
 import { toast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,6 +31,9 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init('61dQJngycUHTIko8H');
+
     const ctx = gsap.context(() => {
       // Form inputs animation
       gsap.fromTo(
@@ -92,17 +96,41 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    if (!formRef.current) {
+      setIsSubmitting(false);
+      return;
+    }
 
-    toast({
-      title: 'Message sent!',
-      description: 'Thank you for reaching out. I\'ll get back to you soon.',
-    });
+    try {
+      const formData = new FormData(formRef.current);
+      const templateParams = {
+        from_name: formData.get('name') as string,
+        from_email: formData.get('email') as string,
+        message: formData.get('message') as string,
+      };
 
-    setIsSubmitting(false);
-    if (formRef.current) {
+      await emailjs.send(
+        'service_fksupgk',
+        'template_30x42qq',
+        templateParams,
+        '61dQJngycUHTIko8H'
+      );
+
+      toast({
+        title: 'Message sent!',
+        description: 'Thank you for reaching out. I\'ll get back to you soon.',
+      });
+
       formRef.current.reset();
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: 'Error sending message',
+        description: 'Something went wrong. Please try again later.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Wallet, ShoppingCart, Truck, MusicNote, CaretLeft, CaretRight, GooglePlayLogo, AppleLogo } from '@phosphor-icons/react';
+import { ArrowRight, CaretLeft, CaretRight, GooglePlayLogo, AppleLogo } from '@phosphor-icons/react';
 import {
   Dialog,
   DialogContent,
@@ -19,7 +19,7 @@ const projects = [
     description:
       'Secure digital wallet for Android & iOS with seamless money transfers, bill payments, and financial management.',
     tech: ['Flutter', 'Dart', 'Firebase', 'Bloc'],
-    icon: Wallet,
+    logo: '/logos/dinarak.png',
     gradient: 'from-blue-500 to-cyan-400',
     images: [
       '/dinarak/Dinarak (1).png',
@@ -38,7 +38,7 @@ const projects = [
     description:
       'Feature-rich marketplace platform enabling users to buy and sell products with real-time messaging and secure payments.',
     tech: ['Flutter', 'GetX', 'REST API', 'Maps'],
-    icon: ShoppingCart,
+    logo: '/logos/quick-sale.png',
     gradient: 'from-emerald-500 to-teal-400',
     images: [
       '/quick-sale/Quick Sale (1).png',
@@ -56,7 +56,7 @@ const projects = [
     description:
       'Comprehensive logistics solution with real-time tracking, route optimization, and fleet management capabilities.',
     tech: ['Flutter', 'Google Maps', 'Firebase', 'Bloc'],
-    icon: Truck,
+    logo: '/logos/trucklink.png',
     gradient: 'from-orange-500 to-amber-400',
     images: [
       '/trucklink/TruckLink (1).png',
@@ -72,7 +72,7 @@ const projects = [
     description:
       'Premium music streaming app with personalized playlists, offline playback, and social sharing features.',
     tech: ['Flutter', 'Dart', 'Audio API', 'Bloc'],
-    icon: MusicNote,
+    logo: '/logos/doremi.png',
     gradient: 'from-purple-500 to-pink-400',
     images: [
       '/doremi/Doremi (1).png',
@@ -184,11 +184,15 @@ const Projects = () => {
                 key={project.title}
                 className="project-card group glass-card p-6 lg:p-8 hover:border-primary/30 transition-all duration-500 hover:shadow-glow hover:-translate-y-2"
               >
-                {/* Icon */}
+                {/* Logo */}
                 <div
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-20 h-20 rounded-2xl bg-gradient-to-br flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 p-2`}
                 >
-                  <project.icon className="w-7 h-7 text-white" weight="light" />
+                  <img 
+                    src={project.logo} 
+                    alt={`${project.title} logo`}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
 
                 {/* Category */}
