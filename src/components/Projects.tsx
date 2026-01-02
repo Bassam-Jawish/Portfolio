@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    title: 'Dinarak - Hawelli',
+    title: 'Dinarak',
     category: 'E-Wallet App',
     description:
       'Secure digital wallet for Android & iOS with seamless money transfers, bill payments, and financial management.',
@@ -22,12 +22,15 @@ const projects = [
     icon: Wallet,
     gradient: 'from-blue-500 to-cyan-400',
     images: [
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1580508174046-170816f65662?w=300&h=600&fit=crop',
+      '/dinarak/Dinarak (1).png',
+      '/dinarak/Dinarak (2).png',
+      '/dinarak/Dinarak (3).png',
+      '/dinarak/Dinarak (4).png',
+      '/dinarak/Dinarak (5).png',
+      '/dinarak/Dinarak (6).png',
     ],
-    playStoreUrl: 'https://play.google.com/store',
-    appStoreUrl: 'https://apps.apple.com',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=dinarak.customer.com',
+    appStoreUrl: 'https://apps.apple.com/us/app/dinarak/id1187712940',
   },
   {
     title: 'QuickSale',
@@ -38,12 +41,14 @@ const projects = [
     icon: ShoppingCart,
     gradient: 'from-emerald-500 to-teal-400',
     images: [
-      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=300&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1556742111-a301076d9d18?w=300&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1557821552-17105176677c?w=300&h=600&fit=crop',
+      '/quick-sale/Quick Sale (1).png',
+      '/quick-sale/Quick Sale (2).png',
+      '/quick-sale/Quick Sale (3).png',
+      '/quick-sale/Quick Sale (4).png',
+      '/quick-sale/Quick Sale (5).png',
     ],
-    playStoreUrl: 'https://play.google.com/store',
-    appStoreUrl: 'https://apps.apple.com',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.mahairi.quicksale',
+    appStoreUrl: 'https://apps.apple.com/us/app/quick-sale/id6753071419',
   },
   {
     title: 'TruckLink',
@@ -54,12 +59,12 @@ const projects = [
     icon: Truck,
     gradient: 'from-orange-500 to-amber-400',
     images: [
-      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=300&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=300&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=300&h=600&fit=crop',
+      '/trucklink/TruckLink (1).png',
+      '/trucklink/TruckLink (2).png',
+      '/trucklink/TruckLink (3).png',
     ],
-    playStoreUrl: 'https://play.google.com/store',
-    appStoreUrl: 'https://apps.apple.com',
+    playStoreUrl: '',
+    appStoreUrl: '',
   },
   {
     title: 'Doremi',
@@ -70,12 +75,15 @@ const projects = [
     icon: MusicNote,
     gradient: 'from-purple-500 to-pink-400',
     images: [
-      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=300&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=600&fit=crop',
+      '/doremi/Doremi (1).png',
+      '/doremi/Doremi (2).png',
+      '/doremi/Doremi (3).png',
+      '/doremi/Doremi (4).png',
+      '/doremi/Doremi (5).png',
+      '/doremi/Doremi (6).png',
     ],
-    playStoreUrl: 'https://play.google.com/store',
-    appStoreUrl: 'https://apps.apple.com',
+    playStoreUrl: '',
+    appStoreUrl: '',
   },
 ];
 
@@ -150,7 +158,7 @@ const Projects = () => {
       <section
         ref={sectionRef}
         id="projects"
-        className="relative py-24 md:py-32 overflow-hidden"
+        className="relative py-16 md:py-20 overflow-hidden"
       >
         {/* Background */}
         <div className="absolute inset-0 pointer-events-none">
@@ -162,7 +170,7 @@ const Projects = () => {
           {/* Section header */}
           <div className="text-center mb-16">
             <h2 className="section-title">
-              Selected <span className="gradient-text">Work</span>
+              <span className="gradient-text">Projects</span>
             </h2>
             <p className="section-subtitle mx-auto mt-4">
               Featured projects showcasing mobile engineering excellence
@@ -198,18 +206,6 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Tech stack */}
-                <div className="flex flex-wrap gap-2 mt-6">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs font-medium text-muted-foreground bg-muted/50 rounded-full border border-border/50"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
                 {/* CTA */}
                 <button 
                   onClick={() => openProjectDialog(project)}
@@ -226,26 +222,26 @@ const Projects = () => {
 
       {/* Project Details Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-4xl glass-card border-border/50 bg-background/95 backdrop-blur-xl">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold gradient-text">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto glass-card border-border/50 bg-background/95 backdrop-blur-xl">
+          <DialogHeader className="pb-2">
+            <DialogTitle className="text-xl md:text-2xl font-bold gradient-text">
               {selectedProject?.title}
             </DialogTitle>
-            <DialogDescription className="text-muted-foreground">
+            <DialogDescription className="text-sm text-muted-foreground">
               {selectedProject?.description}
             </DialogDescription>
           </DialogHeader>
 
           {/* Image Carousel */}
-          <div className="relative mt-4">
-            <div className="flex items-center gap-4">
+          <div className="relative mt-3">
+            <div className="flex items-center gap-2 md:gap-3">
               {/* Left Arrow */}
               <button
                 onClick={() => scrollImages('left')}
-                className="flex-shrink-0 w-10 h-10 rounded-full glass-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-300 flex items-center justify-center group z-10"
+                className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full glass-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-300 flex items-center justify-center group z-10"
                 aria-label="Previous image"
               >
-                <CaretLeft className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" weight="bold" />
+                <CaretLeft className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary transition-colors" weight="bold" />
               </button>
 
               {/* Images Container */}
@@ -259,13 +255,12 @@ const Projects = () => {
                 >
                   {selectedProject?.images.map((image, index) => (
                     <div key={index} className="flex-shrink-0 w-full flex justify-center">
-                      <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg max-w-[200px] md:max-w-[280px]">
+                      <div className="relative rounded-xl overflow-hidden border border-border/30 shadow-lg max-w-[500px] max-h-[400px]">
                         <img
                           src={image}
-                          alt={`${selectedProject?.title} screenshot ${index + 1}`}
-                          className="w-full h-[400px] md:h-[500px] object-cover"
+                          alt={`${selectedProject?.title} mockup ${index + 1}`}
+                          className="w-full h-full object-contain"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
                       </div>
                     </div>
                   ))}
@@ -275,15 +270,15 @@ const Projects = () => {
               {/* Right Arrow */}
               <button
                 onClick={() => scrollImages('right')}
-                className="flex-shrink-0 w-10 h-10 rounded-full glass-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-300 flex items-center justify-center group z-10"
+                className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full glass-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-300 flex items-center justify-center group z-10"
                 aria-label="Next image"
               >
-                <CaretRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" weight="bold" />
+                <CaretRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary transition-colors" weight="bold" />
               </button>
             </div>
 
             {/* Dots indicator */}
-            <div className="flex justify-center gap-2 mt-4">
+            <div className="flex justify-center gap-2 mt-3">
               {selectedProject?.images.map((_, index) => (
                 <button
                   key={index}
@@ -299,45 +294,44 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Tech Stack */}
-          <div className="flex flex-wrap gap-2 mt-4">
-            {selectedProject?.tech.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 text-xs font-medium text-primary bg-primary/10 rounded-full border border-primary/20"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
           {/* App Store Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <a
-              href={selectedProject?.playStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary flex items-center justify-center gap-3 flex-1"
-            >
-              <GooglePlayLogo className="w-6 h-6" weight="fill" />
-              <div className="text-left">
-                <div className="text-[10px] opacity-80">GET IT ON</div>
-                <div className="text-sm font-semibold">Google Play</div>
-              </div>
-            </a>
-            <a
-              href={selectedProject?.appStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary flex items-center justify-center gap-3 flex-1"
-            >
-              <AppleLogo className="w-6 h-6" weight="fill" />
-              <div className="text-left">
-                <div className="text-[10px] opacity-80">Download on the</div>
-                <div className="text-sm font-semibold">App Store</div>
-              </div>
-            </a>
-          </div>
+          {(selectedProject?.playStoreUrl || selectedProject?.appStoreUrl) && (
+            <div className="flex flex-col sm:flex-row gap-3 mt-4">
+              {selectedProject?.playStoreUrl && (
+                <a
+                  href={selectedProject.playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary flex items-center justify-center gap-3 flex-1"
+                >
+                  <GooglePlayLogo className="w-6 h-6" weight="fill" />
+                  <div className="text-left">
+                    <div className="text-[10px] opacity-80">GET IT ON</div>
+                    <div className="text-sm font-semibold">Google Play</div>
+                  </div>
+                </a>
+              )}
+              {selectedProject?.appStoreUrl && (
+                <a
+                  href={selectedProject.appStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary flex items-center justify-center gap-3 flex-1"
+                >
+                  <AppleLogo className="w-6 h-6" weight="fill" />
+                  <div className="text-left">
+                    <div className="text-[10px] opacity-80">Download on the</div>
+                    <div className="text-sm font-semibold">App Store</div>
+                  </div>
+                </a>
+              )}
+            </div>
+          )}
+          {!selectedProject?.playStoreUrl && !selectedProject?.appStoreUrl && (
+            <div className="mt-4 text-center">
+              <span className="text-sm text-muted-foreground italic">Coming Soon</span>
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </>

@@ -120,7 +120,7 @@ const About = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-16 md:py-20 overflow-hidden"
     >
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -145,10 +145,12 @@ const About = () => {
               
               {/* Glass frame */}
               <div className="relative w-full h-full rounded-full glass-card overflow-hidden border-2 border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-105 hover:rotate-3">
-                {/* Placeholder avatar */}
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <span className="text-7xl font-bold gradient-text">BJ</span>
-                </div>
+                {/* Photo */}
+                <img
+                  src="/bassam-jawish-photo.png"
+                  alt="Bassam Jawish"
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Floating accent */}
@@ -193,8 +195,8 @@ const About = () => {
         </div>
 
         {/* Skills Grid with Marquee */}
-        <div ref={skillsRef} className="mt-20">
-          <h3 className="text-2xl font-semibold text-center mb-10">
+        <div ref={skillsRef} className="mt-32">
+          <h3 className="section-title text-center mb-10">
             Tech <span className="gradient-text">Stack</span>
           </h3>
           

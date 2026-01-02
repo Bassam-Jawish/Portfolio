@@ -75,15 +75,6 @@ const Hero = () => {
           <span className="block text-foreground mt-2">Mobile Engineer</span>
         </h1>
 
-        <p
-          ref={sublineRef}
-          className="mt-8 text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto"
-        >
-          <span className="text-primary">Flutter</span> •{' '}
-          <span className="text-secondary">Cross-Platform</span> •{' '}
-          <span className="text-foreground">Scalable Apps</span>
-        </p>
-
         <div ref={ctaRef} className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#contact" className="btn-primary group">
             <span className="relative z-10">Hire Me</span>

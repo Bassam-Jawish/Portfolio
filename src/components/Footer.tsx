@@ -16,7 +16,7 @@ const navLinks = [
 const socialLinks = [
   { icon: GithubLogo, href: 'https://github.com/bassamjawish', label: 'GitHub' },
   { icon: LinkedinLogo, href: 'https://linkedin.com/in/bassamjawish', label: 'LinkedIn' },
-  { icon: EnvelopeSimple, href: 'mailto:contact@bassamjawish.dev', label: 'Email' },
+  { icon: EnvelopeSimple, href: 'mailto:jawishbassam@gmail.com', label: 'Email' },
 ];
 
 const Footer = () => {
@@ -92,10 +92,9 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-10 pt-6 border-t border-border/20 text-center">
+        <div className="mt-5 border-t border-border/20 text-center">
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-1">
-            © {new Date().getFullYear()} Bassam Jawish. Made with
-            <Heart className="w-4 h-4 text-destructive" weight="fill" />
+            © {new Date().getFullYear()} Bassam Jawish
           </p>
         </div>
       </div>

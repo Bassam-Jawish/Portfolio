@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GithubLogo, LinkedinLogo, EnvelopeSimple, PaperPlaneTilt } from '@phosphor-icons/react';
+import { GithubLogo, LinkedinLogo, EnvelopeSimple, PaperPlaneTilt, Clock, Sparkle } from '@phosphor-icons/react';
 import { toast } from '@/hooks/use-toast';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -64,6 +64,25 @@ const Contact = () => {
           },
         }
       );
+
+      // Decorative orbs animation
+      gsap.to('.contact-orb', {
+        y: -15,
+        duration: 3,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        stagger: 0.6,
+      });
+
+      // Sparkle icons animation
+      gsap.to('.contact-sparkle', {
+        rotate: 360,
+        duration: 4,
+        ease: 'none',
+        repeat: -1,
+        stagger: 1,
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -91,7 +110,7 @@ const Contact = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-16 md:py-20 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -162,7 +181,7 @@ const Contact = () => {
                 name="message"
                 required
                 rows={5}
-                className="glass-input resize-none h-full min-h-[120px]"
+                className="glass-input resize-none min-h-[120px]"
                 placeholder="Tell me about your project..."
               />
             </div>
@@ -185,7 +204,7 @@ const Contact = () => {
 
           {/* Info & Social */}
           <div className="flex flex-col h-full">
-            <div className="glass-card p-8 flex flex-col justify-between h-full">
+            <div className="glass-card p-8 flex flex-col justify-between h-full relative overflow-hidden">
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">
                   Get in touch
@@ -194,6 +213,35 @@ const Contact = () => {
                   I'm always interested in hearing about new opportunities, exciting
                   projects, and ways to collaborate. Feel free to reach out!
                 </p>
+              </div>
+
+              {/* Decorative Animated Section */}
+              <div className="flex-1 flex flex-col items-center justify-center relative my-6">
+                {/* Floating Orbs */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <div className="contact-orb absolute left-1/4 w-16 h-16 rounded-full bg-primary/10 blur-xl animate-glow-pulse" />
+                  <div className="contact-orb absolute right-1/4 w-20 h-20 rounded-full bg-secondary/10 blur-xl animate-glow-pulse" style={{ animationDelay: '0.5s' }} />
+                  <div className="contact-orb absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-primary/5 blur-lg" style={{ animationDelay: '1s' }} />
+                </div>
+
+                {/* Sparkle Icons */}
+                <div className="relative z-10 flex items-center gap-8 mt-8">
+                  <div className="contact-sparkle text-primary/40">
+                    <Sparkle className="w-6 h-6" weight="duotone" />
+                  </div>
+                  <div className="flex flex-col items-center gap-2 px-6 py-4 rounded-xl bg-muted/20 border border-border/30 backdrop-blur-sm">
+                    <Clock className="w-5 h-5 text-primary" weight="light" />
+                    <span className="text-xs text-muted-foreground font-medium">
+                      Response Time
+                    </span>
+                    <span className="text-sm font-semibold text-foreground">
+                      &lt; 24 hours
+                    </span>
+                  </div>
+                  <div className="contact-sparkle text-secondary/40" style={{ animationDelay: '0.5s' }}>
+                    <Sparkle className="w-6 h-6" weight="duotone" />
+                  </div>
+                </div>
               </div>
 
               {/* Social Links */}

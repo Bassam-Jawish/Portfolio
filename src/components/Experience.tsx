@@ -82,7 +82,7 @@ const Experience = () => {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-16 md:py-20 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
