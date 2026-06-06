@@ -46,19 +46,7 @@ const Hero = () => {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Spline 3D Background */}
-      <div className="absolute inset-0 z-0">
-        <iframe
-          src="https://my.spline.design/orb-gI2A3I7RNrZsHPvXyDYt4NGf/"
-          frameBorder="0"
-          className="w-full h-full"
-          style={{ pointerEvents: 'none' }}
-          title="3D Background"
-        />
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
-      </div>
-
+    
       {/* Ambient orbs */}
       <div className="hero-orb absolute top-1/4 left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl" />
       <div className="hero-orb absolute bottom-1/3 right-10 w-48 h-48 rounded-full bg-secondary/10 blur-3xl" />
@@ -72,12 +60,12 @@ const Hero = () => {
         >
           <span className="block text-foreground">Hi, I'm</span>
           <span className="block gradient-text mt-2 animate-text-glow">Bassam</span>
-          <span className="block text-foreground mt-2">Mobile Engineer</span>
+          <span className="block text-foreground mt-2">Software Engineer</span>
         </h1>
 
         <div ref={ctaRef} className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#contact" className="btn-primary group">
-            <span className="relative z-10">Hire Me</span>
+            <span className="relative z-10">Contact Me</span>
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_100%] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-shimmer" />
           </a>
           <a href="#projects" className="btn-secondary">

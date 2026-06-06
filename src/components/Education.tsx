@@ -22,6 +22,14 @@ const certifications = [
       'Learned how to structure Flutter applications using Clean Architecture principles for scalability, testability, and long-term maintainability.',
     icon: Certificate,
   },
+  {
+    title: 'Flutter Advanced Course: BLoC and MVVM Pattern',
+    provider: 'Udemy',
+    subtitle: 'State Management with BLoC',
+    description:
+      'Mastered managing Flutter app state with the BLoC pattern using Cubits and Blocs — covering state handling, UI integration, and communication between multiple blocs.',
+    icon: Certificate,
+  },
 ];
 
 const Education = () => {
@@ -83,7 +91,7 @@ const Education = () => {
     <section
       ref={sectionRef}
       id="education"
-      className="relative py-16 md:py-20 overflow-hidden"
+      className="relative py-12 md:py-16 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -93,7 +101,7 @@ const Education = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Education Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="section-title">
             Academic <span className="gradient-text">Background</span>
           </h2>
@@ -101,7 +109,7 @@ const Education = () => {
 
         <div
           ref={eduRef}
-          className="glass-card p-8 md:p-12 max-w-4xl mx-auto mb-20 hover:border-primary/30 transition-all duration-300"
+          className="glass-card p-8 md:p-12 max-w-4xl mx-auto mb-12 hover:border-primary/30 transition-all duration-300"
         >
           <div className="grid md:grid-cols-[200px_1fr] gap-8 items-center">
             {/* Icon */}
@@ -142,7 +150,7 @@ const Education = () => {
           </p>
         </div>
 
-        <div ref={certsRef} className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div ref={certsRef} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {certifications.map((cert) => (
             <div
               key={cert.title}

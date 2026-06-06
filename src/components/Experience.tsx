@@ -9,26 +9,26 @@ const experiences = [
   {
     company: 'FikraTech',
     role: 'Mobile Developer',
-    period: 'Apr 2025 – Present',
+    period: 'Apr 2025 – Jun 2026',
     location: 'Dubai, UAE',
     description:
-      'Worked on secure e-wallet apps for Android and iOS, contributing to a major redesign, performance improvements, and security enhancements. Improved user engagement and optimized CI/CD workflows using Scrum and Azure DevOps.',
+      'Developed and maintained secure, large-scale fintech applications — Hawelli, Dinarak, and Sahab — spanning digital wallets, remittances, and payments. Architected Hawelli on Clean Architecture across 40+ modules and 110+ screens with QR/NFC payments and KYC, engineered advanced mobile security (RSA-2048 signing, AES-GCM storage, certificate pinning, biometrics), and managed 8 build flavors with CI/CD — improving app performance by ~30%.',
   },
   {
-    company: 'Rand Service Provider',
-    role: 'Mobile Specialist Engineer',
-    period: 'Jun 2024 – Oct 2025',
+    company: 'Rand LLC',
+    role: 'Mobile Engineer',
+    period: 'Jun 2024 – Apr 2025',
     location: 'Damascus, Syria',
     description:
-      'Key contributor to the Doremi music app, delivering features that significantly grew the user base. Led the migration to Flutter, optimized performance, and supported monetization improvements.',
+      'Built cross-platform streaming and lifestyle apps — Livo, DoReMi, and Emaniyat — using Clean Architecture, BLoC, and modular feature design. Converted native Android code to Flutter (cutting development time by ~50%) and introduced monetization features that grew revenue by ~70% and doubled DoReMi’s user base within six months.',
   },
   {
     company: 'Doodles Agency',
     role: 'Mobile Application Developer',
     period: 'May 2023 – May 2024',
-    location: 'Dubai, UAE',
+    location: 'Damascus, Syria',
     description:
-      'Built and maintained Flutter apps including Taverna, focusing on scalable architecture and stable state management using Bloc and GetX.',
+      'Built Taverna, a Flutter on-demand marketplace connecting users with nearby restaurants and supermarkets for menu browsing, ordering, and real-time delivery tracking — reaching 5,000+ users and lifting vendor engagement by 30%. Managed state with BLoC and GetX and integrated Google Maps live tracking, reducing crashes by 20%.',
   },
 ];
 
@@ -82,7 +82,7 @@ const Experience = () => {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative py-16 md:py-20 overflow-hidden"
+      className="relative py-12 md:py-16 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -92,12 +92,12 @@ const Experience = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="section-title">
             Work <span className="gradient-text">Experience</span>
           </h2>
           <p className="section-subtitle mx-auto mt-4">
-            A journey through impactful roles in mobile development
+            A journey through impactful roles in software development
           </p>
         </div>
 

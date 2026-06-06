@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Preloader from '@/components/Preloader';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -10,8 +11,15 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
+  const location = useLocation();
+  // Only play the preloader the first time the site is opened this session,
+  // and never when we arrive at a specific section (e.g. returning from a project page).
+  const skipPreloader =
+    typeof window !== 'undefined' &&
+    (sessionStorage.getItem('preloaderShown') === 'true' || !!location.hash);
+
+  const [isLoading, setIsLoading] = useState(!skipPreloader);
+  const [showContent, setShowContent] = useState(skipPreloader);
 
   useEffect(() => {
     // Prevent scroll during loading
@@ -26,7 +34,20 @@ const Index = () => {
     };
   }, [isLoading]);
 
+  // Scroll to the section referenced by the URL hash once content is visible
+  useEffect(() => {
+    if (!showContent || !location.hash) return;
+
+    const id = location.hash.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) {
+      // Defer to ensure layout is ready
+      requestAnimationFrame(() => el.scrollIntoView({ behavior: 'auto' }));
+    }
+  }, [showContent, location.hash]);
+
   const handlePreloaderComplete = () => {
+    sessionStorage.setItem('preloaderShown', 'true');
     setIsLoading(false);
     setTimeout(() => setShowContent(true), 100);
   };

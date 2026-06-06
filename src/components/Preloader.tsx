@@ -86,7 +86,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
       {/* Subtitle */}
       <div ref={subtitleRef} className="mb-12">
         <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-widest uppercase">
-          Mobile Engineer
+          Software Engineer
         </p>
       </div>
 

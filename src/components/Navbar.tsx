@@ -71,7 +71,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a href="#contact" className="btn-primary text-sm !py-2 !px-5">
-                Hire Me
+                Contact Me
               </a>
             </div>
 
@@ -109,7 +109,7 @@ const Navbar = () => {
             onClick={handleLinkClick}
             className="mobile-nav-link btn-primary text-lg mt-4"
           >
-            Hire Me
+            Contact Me
           </a>
         </div>
       </div>

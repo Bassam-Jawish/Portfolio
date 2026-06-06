@@ -138,7 +138,7 @@ const Contact = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative py-16 md:py-20 overflow-hidden"
+      className="relative py-12 md:py-16 overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -147,7 +147,7 @@ const Contact = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="section-title">
             Let's <span className="gradient-text">Connect</span>
           </h2>
