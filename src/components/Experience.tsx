@@ -47,28 +47,28 @@ const Experience = () => {
           ease: 'none',
           scrollTrigger: {
             trigger: timelineRef.current,
-            start: 'top 70%',
-            end: 'bottom 50%',
-            scrub: 1,
+            start: 'top 75%',
+            end: 'bottom 55%',
+            scrub: 0.4,
           },
         }
       );
 
       // Experience cards animation
       gsap.utils.toArray('.experience-card').forEach((card, index) => {
-        const direction = index % 2 === 0 ? -60 : 60;
+        const direction = index % 2 === 0 ? -40 : 40;
         gsap.fromTo(
           card as Element,
-          { opacity: 0, x: direction, filter: 'blur(8px)' },
+          { opacity: 0, x: direction, filter: 'blur(4px)' },
           {
             opacity: 1,
             x: 0,
             filter: 'blur(0px)',
-            duration: 0.8,
-            ease: 'power3.out',
+            duration: 0.45,
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: card as Element,
-              start: 'top 80%',
+              start: 'top 88%',
             },
           }
         );

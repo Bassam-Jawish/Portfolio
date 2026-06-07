@@ -15,18 +15,18 @@ const Projects = () => {
       gsap.utils.toArray('.project-card').forEach((card, index) => {
         gsap.fromTo(
           card as Element,
-          { opacity: 0, y: 60, scale: 0.95 },
+          { opacity: 0, y: 32, scale: 0.97 },
           {
             opacity: 1,
             y: 0,
             scale: 1,
-            duration: 0.8,
-            ease: 'power3.out',
+            duration: 0.45,
+            ease: 'power2.out',
             scrollTrigger: {
               trigger: card as Element,
-              start: 'top 90%',
+              start: 'top 92%',
             },
-            delay: (index % 3) * 0.1,
+            delay: (index % 3) * 0.03,
           }
         );
       });

@@ -42,16 +42,16 @@ const Education = () => {
       // Education card animation
       gsap.fromTo(
         eduRef.current,
-        { opacity: 0, y: 40, filter: 'blur(8px)' },
+        { opacity: 0, y: 24, filter: 'blur(4px)' },
         {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.45,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: eduRef.current,
-            start: 'top 80%',
+            start: 'top 88%',
           },
         }
       );
@@ -68,17 +68,17 @@ const Education = () => {
       // Certification cards stagger
       gsap.fromTo(
         '.cert-card',
-        { opacity: 0, y: 40, filter: 'blur(8px)' },
+        { opacity: 0, y: 24, filter: 'blur(4px)' },
         {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 0.6,
-          stagger: 0.2,
-          ease: 'power3.out',
+          duration: 0.4,
+          stagger: 0.06,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: certsRef.current,
-            start: 'top 80%',
+            start: 'top 88%',
           },
         }
       );

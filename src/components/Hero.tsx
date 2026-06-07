@@ -9,24 +9,24 @@ const Hero = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.3 });
+    const tl = gsap.timeline({ delay: 0.15 });
 
     tl.fromTo(
       headlineRef.current,
-      { opacity: 0, y: 60, filter: 'blur(12px)' },
-      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1, ease: 'power3.out' }
+      { opacity: 0, y: 40, filter: 'blur(8px)' },
+      { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out' }
     )
       .fromTo(
         sublineRef.current,
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' },
-        '-=0.5'
+        { opacity: 0, y: 24 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' },
+        '-=0.3'
       )
       .fromTo(
         ctaRef.current?.children || [],
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power3.out' },
-        '-=0.4'
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.35, stagger: 0.06, ease: 'power2.out' },
+        '-=0.25'
       );
 
     // Floating orbs animation

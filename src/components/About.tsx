@@ -72,10 +72,10 @@ const About = () => {
         { opacity: 0 },
         {
           opacity: 1,
-          duration: 0.5,
+          duration: 0.3,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
+            start: 'top 85%',
           },
         }
       );
@@ -83,16 +83,16 @@ const About = () => {
       // Image slide in from left
       gsap.fromTo(
         imageRef.current,
-        { opacity: 0, x: -80, filter: 'blur(10px)' },
+        { opacity: 0, x: -40, filter: 'blur(6px)' },
         {
           opacity: 1,
           x: 0,
           filter: 'blur(0px)',
-          duration: 1,
-          ease: 'power3.out',
+          duration: 0.5,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%',
+            start: 'top 80%',
           },
         }
       );
@@ -100,15 +100,15 @@ const About = () => {
       // Content fade in
       gsap.fromTo(
         contentRef.current,
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 24 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.45,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 65%',
+            start: 'top 78%',
           },
         }
       );
@@ -116,17 +116,17 @@ const About = () => {
       // Skills stagger animation
       gsap.fromTo(
         '.skill-item',
-        { opacity: 0, scale: 0.8, y: 20 },
+        { opacity: 0, scale: 0.9, y: 12 },
         {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: 'back.out(1.7)',
+          duration: 0.35,
+          stagger: { amount: 0.3 },
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: skillsRef.current,
-            start: 'top 80%',
+            start: 'top 85%',
           },
         }
       );

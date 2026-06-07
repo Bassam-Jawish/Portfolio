@@ -26,16 +26,16 @@ const Footer = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         footerRef.current,
-        { opacity: 0, y: 40, filter: 'blur(8px)' },
+        { opacity: 0, y: 20, filter: 'blur(4px)' },
         {
           opacity: 1,
           y: 0,
           filter: 'blur(0px)',
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.45,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: footerRef.current,
-            start: 'top 95%',
+            start: 'top 98%',
           },
         }
       );

@@ -38,16 +38,16 @@ const Contact = () => {
       // Form inputs animation
       gsap.fromTo(
         '.contact-input',
-        { opacity: 0, x: -40 },
+        { opacity: 0, x: -24 },
         {
           opacity: 1,
           x: 0,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: 'power3.out',
+          duration: 0.35,
+          stagger: 0.06,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: formRef.current,
-            start: 'top 80%',
+            start: 'top 88%',
           },
         }
       );
@@ -55,16 +55,16 @@ const Contact = () => {
       // Social links animation
       gsap.fromTo(
         '.social-link',
-        { opacity: 0, scale: 0.8 },
+        { opacity: 0, scale: 0.9 },
         {
           opacity: 1,
           scale: 1,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: 'back.out(1.7)',
+          duration: 0.35,
+          stagger: 0.05,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: '.social-links',
-            start: 'top 85%',
+            start: 'top 90%',
           },
         }
       );
