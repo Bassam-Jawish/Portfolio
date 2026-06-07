@@ -14,8 +14,8 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: GithubLogo, href: 'https://github.com/bassamjawish', label: 'GitHub' },
-  { icon: LinkedinLogo, href: 'https://linkedin.com/in/bassamjawish', label: 'LinkedIn' },
+  { icon: GithubLogo, href: 'https://github.com/Bassam-Jawish', label: 'GitHub' },
+  { icon: LinkedinLogo, href: 'https://www.linkedin.com/in/bassam-jawish/', label: 'LinkedIn' },
   { icon: EnvelopeSimple, href: 'mailto:jawishbassam@gmail.com', label: 'Email' },
 ];
 

@@ -11,17 +11,17 @@ const socialLinks = [
   {
     name: 'GitHub',
     icon: GithubLogo,
-    href: 'https://github.com/bassamjawish',
+    href: 'https://github.com/Bassam-Jawish',
   },
   {
     name: 'LinkedIn',
     icon: LinkedinLogo,
-    href: 'https://linkedin.com/in/bassamjawish',
+    href: 'https://www.linkedin.com/in/bassam-jawish/',
   },
   {
     name: 'Email',
     icon: EnvelopeSimple,
-    href: 'mailto:contact@bassamjawish.dev',
+    href: 'mailto:jawishbassam@gmail.com',
   },
 ];
 

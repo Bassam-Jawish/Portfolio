@@ -154,9 +154,9 @@ export const projects: Project[] = [
     company: 'FikraTech',
     period: '',
     tagline:
-      'Secure digital wallet for Android & iOS with money transfers, bill payments, and QR merchant payments.',
+      'Secure digital wallet for Android & iOS with P2P transfers, bill payments, ATM withdrawals, and QR merchant payments.',
     summary:
-      'A secure digital wallet for Android and iOS covering wallet operations end-to-end — money transfers, bill payments, ATM withdrawals, and QR merchant payments — built on reusable BLoC/Cubit infrastructure.',
+      'A secure consumer e-wallet for Android and iOS covering wallet operations end-to-end — money transfers, eFAWATEERCOM bill payments, ATM withdrawals, and QR-based merchant payments — built on reusable BLoC/Cubit infrastructure with generic pagination and unified error handling.',
     tech: ['Flutter', 'Dart', 'Firebase', 'BLoC/Cubit', 'REST API'],
     logo: '/logos/dinarak.png',
     images: [
@@ -170,7 +170,7 @@ export const projects: Project[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dinarak.fikratech.customer',
     appStoreUrl: 'https://apps.apple.com/us/app/dinarak/id6743640847',
     overview:
-      'Dinarak is a consumer e-wallet delivering core wallet operations: money transfers, bill payments, ATM withdrawals, and QR-based merchant payments. It integrates eFAWATEERCOM and banking APIs on top of a reusable BLoC/Cubit infrastructure with generic pagination and unified error handling, and contributed to a major redesign, performance improvements, and security enhancements.',
+      'Dinarak is a consumer e-wallet delivering core wallet operations: P2P money transfers, eFAWATEERCOM bill payments, ATM withdrawals, and QR-based merchant payments. It integrates banking APIs on top of a reusable BLoC/Cubit infrastructure with generic pagination and unified error handling, and contributed to a major redesign, performance improvements, and security enhancements.',
   },
   {
     slug: 'sahab',
@@ -179,9 +179,9 @@ export const projects: Project[] = [
     company: 'FikraTech',
     period: '',
     tagline:
-      'Exchange-rate dashboards, international transfers, and transaction tracking with map-based branch discovery.',
+      'Remittance and currency-exchange app with live rate dashboards, international transfers, and map-based branch discovery.',
     summary:
-      'A remittance and currency-exchange app delivering live exchange-rate dashboards, international transfers, and transaction tracking, with map-based branch and ATM discovery.',
+      'A remittance and currency-exchange app delivering live exchange-rate dashboards powered by currency APIs, international transfers with full transaction lifecycle tracking, and Google Maps-based branch and ATM discovery.',
     tech: ['Flutter', 'Dart', 'BLoC/Cubit', 'Google Maps', 'REST API'],
     logo: '/logos/sahab.png',
     images: [
@@ -202,10 +202,10 @@ export const projects: Project[] = [
     company: 'Rand LLC',
     period: '',
     tagline:
-      'Streaming app for movies, series, live TV, and sports with an advanced adaptive HLS video player.',
+      'Cross-platform streaming app for movies, series, live TV, and sports with an adaptive HLS player and bilingual AR/EN UX.',
     summary:
-      'A streaming app for movies, series, live TV, and sports featuring an advanced HLS video player with fullscreen, picture-in-picture, subtitles, and adaptive quality, plus phone-OTP authentication.',
-    tech: ['Flutter', 'Dart', 'HLS', 'GoRouter', 'GetIt', 'BLoC'],
+      'A cross-platform streaming app covering movies, series, live TV, sports, and clips — built on Clean Architecture with BLoC, phone-OTP auth, an HLS video player (fullscreen, PiP, subtitles, quality selection), and bilingual Arabic/English support.',
+    tech: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'GoRouter', 'GetIt', 'Retrofit', 'Dio', 'HLS'],
     logo: '/logos/livo.png',
     images: [
       '/livo/Livo (1).png',
@@ -216,7 +216,58 @@ export const projects: Project[] = [
       '/livo/Livo (6).png',
     ],
     overview:
-      'Livo is a video-streaming platform spanning movies, series, live TV, and sports. Its centerpiece is an advanced HLS video player supporting fullscreen, picture-in-picture, subtitles, and adaptive quality switching. Authentication uses phone-OTP with token refresh, and the app is wired together with GoRouter navigation and GetIt dependency injection on a Clean Architecture foundation.',
+      'Livo is a cross-platform streaming mobile app covering movies, series, live TV, sports, and short clips. It delivers tab-based navigation with deep-linked detail flows, explore/search across content types, and a production-grade HLS video player with fullscreen, picture-in-picture, subtitles, quality selection, and playback-speed controls.\n\nThe codebase follows Clean Architecture per feature module — data, domain, and presentation layers — with BLoC/Cubit state management, repository and use-case patterns, Either<Failure, T> error handling (dartz), and dependency injection via GetIt. REST APIs are integrated through Retrofit + Dio with auth interceptors, automatic token refresh on 401, secure storage, and centralized failure mapping.',
+    featureSections: [
+      {
+        title: 'Streaming & Content',
+        items: [
+          'Movies, series, live TV, sports, and clips with tab-based shell navigation',
+          'Deep-linked detail flows for each content type',
+          'Carousel banners, marquee text, and read-more descriptions',
+          'Kids mode for family-friendly browsing',
+          'Mock data sources alongside remote APIs for development and demos',
+        ],
+      },
+      {
+        title: 'Video Player',
+        items: [
+          'HLS/network video player with adaptive streaming',
+          'Fullscreen playback and picture-in-picture support',
+          'Subtitles, quality selection, and playback-speed controls',
+          'Download manager scaffold (flutter_downloader + isolate callback) for offline media',
+        ],
+      },
+      {
+        title: 'Explore & Search',
+        items: [
+          'Debounced search with multi-type results',
+          'Filter bottom sheet — tags, sort, year, and rating',
+          'Cached network images for performant poster/thumbnail loading',
+        ],
+      },
+      {
+        title: 'Authentication & Profile',
+        items: [
+          'Phone OTP authentication — register, verify, login, reset/change password',
+          'Secure token storage with automatic refresh-token retry on 401',
+          'Profile management with image crop and upload',
+          'Help center, contact flows, and account deletion',
+          'Localized form validation and password strength indicator in AR/EN',
+        ],
+      },
+      {
+        title: 'Architecture & Reliability',
+        items: [
+          'Clean Architecture with feature modules, repositories, and use cases',
+          'BLoC/Cubit state management with GetIt dependency injection',
+          'GoRouter shell navigation with auth guards and nested library routes',
+          'Retrofit + Dio REST layer with code generation (build_runner)',
+          'Global error handling, remote error logging, and connectivity checks',
+          'Responsive layouts (ScreenUtil), skeleton loaders, and asset codegen (flutter_gen)',
+          'Environment config via .env and bilingual AR/EN localization with RTL support',
+        ],
+      },
+    ],
   },
   {
     slug: 'doremi',
@@ -225,10 +276,10 @@ export const projects: Project[] = [
     company: 'Rand LLC',
     period: '',
     tagline:
-      'Music, podcast, and radio app with background audio, offline-first downloads, and a subscription system.',
+      'Cross-platform music streaming app for music, podcasts, radio, and video with offline downloads and premium subscriptions.',
     summary:
-      'A music, podcast, and radio app with background audio playback, offline-first SQLite downloads, deep linking, and a subscription/monetization system — which doubled the user base within six months.',
-    tech: ['Flutter', 'Dart', 'just_audio', 'SQLite', 'BLoC', 'Firebase'],
+      'A cross-platform music streaming app serving music, podcasts, radio, and video — built with Clean Architecture across 15+ feature modules and 100+ domain use cases, background audio playback, offline-first SQLite downloads, deep linking, and a full subscription system that doubled the user base within six months.',
+    tech: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'GoRouter', 'GetIt', 'Retrofit', 'just_audio', 'SQLite', 'Firebase'],
     logo: '/logos/doremi.png',
     images: [
       '/doremi/Doremi (1).png',
@@ -240,7 +291,62 @@ export const projects: Project[] = [
     ],
     playStoreUrl: 'https://play.google.com/store/apps/details?id=site.rand.doremi.prod',
     overview:
-      'DoReMi is a music, podcast, and radio app built around continuous background audio (just_audio / audio_service) and an offline-first experience with SQLite downloads. It supports deep linking, FCM-driven routing, and a full subscription and monetization system. The product doubled its user base within six months of release.',
+      'DoReMi is a cross-platform music streaming app serving music, podcasts, radio, and video from a single Flutter codebase for Android and iOS. It ships bilingual (English/Arabic) support with full RTL layout, light/dark themes, and responsive UI — and doubled its user base within six months of release.\n\nThe app is engineered on Clean Architecture with 15+ feature modules and 100+ use cases separating business logic from UI, BLoC state management, dependency injection with GetIt, and functional error handling via dartz (Either/Failure pattern). The REST API layer uses Retrofit + Dio with code generation, session/auth interceptors, and environment-based configuration.',
+    featureSections: [
+      {
+        title: 'Music & Content',
+        items: [
+          'Music, podcasts, radio, and video streaming from a unified library',
+          'GoRouter shell navigation — Home, Search, Library, and Premium tabs',
+          'Lyrics display and rich media browsing across content types',
+          'Cached network images and shimmer/skeleton loading states',
+        ],
+      },
+      {
+        title: 'Audio Playback',
+        items: [
+          'Background audio with just_audio and audio_service',
+          'Queue management with shuffle, repeat, and system media controls',
+          'Mini player and continuous playback across app navigation',
+          'Video playback via flick_video_player and video_player',
+        ],
+      },
+      {
+        title: 'Offline & Downloads',
+        items: [
+          'Offline-first download system with SQLite persistence for metadata',
+          'Background downloads for songs, videos, and podcast episodes',
+          'Download progress tracking and offline playback when content is saved',
+        ],
+      },
+      {
+        title: 'Subscriptions & Monetization',
+        items: [
+          'Premium subscription flows — bundles, trials, promo codes, and auto-renewal',
+          'Ad-supported free tier alongside premium gating',
+          'VPN detection for geo/licensing compliance (optional enforcement)',
+        ],
+      },
+      {
+        title: 'Deep Linking & Notifications',
+        items: [
+          'Android App Links — playlists, albums, artists, and songs open directly in-app',
+          'Cold-start deep link handling — splash → home → target content',
+          'Firebase Cloud Messaging with push notification deep-link routing',
+        ],
+      },
+      {
+        title: 'Architecture & Engineering',
+        items: [
+          'Clean Architecture — 15+ feature modules with data / domain / presentation layers',
+          '100+ use cases, BLoC state management, and GetIt dependency injection',
+          'Type-safe REST API with Retrofit + Dio and build_runner code generation',
+          'Secure storage for sensitive data + SharedPreferences for app state',
+          'Environment-based config (.env via flutter_dotenv) and session interceptors',
+          'Unit tests for BLoCs (bloc_test, mocktail), integration tests, and widget tests',
+        ],
+      },
+    ],
   },
   {
     slug: 'emaniyat',
@@ -249,10 +355,10 @@ export const projects: Project[] = [
     company: 'Rand LLC',
     period: '',
     tagline:
-      'Islamic lifestyle app with a 604-page Mushaf reader, prayer times, Qibla compass, and a digital library.',
+      'Full-featured Islamic lifestyle app with prayer times, Quran reader, digital library, and bilingual AR/EN support.',
     summary:
-      'An Islamic lifestyle app featuring a 604-page Mushaf reader with multi-reciter ayah-level audio, prayer times, a Qibla compass, a digital library, and location-based notifications.',
-    tech: ['Flutter', 'Dart', 'BLoC', 'Audio Streaming', 'Geolocation'],
+      'A full-featured Islamic lifestyle app (Flutter, iOS & Android) with prayer times and adhan notifications, a 604-page Mushaf reader with multi-reciter audio, azkar/duas, Qibla compass, Hijri calendar, zakat calculator, a PDF digital library with offline downloads, and Paymera subscription payments.',
+    tech: ['Flutter', 'Dart', 'GetX', 'GetIt', 'just_audio', 'Firebase', 'Geolocation'],
     logo: '/logos/emaniyat.png',
     images: [
       '/emaniyat/Emaniyat (1).png',
@@ -264,7 +370,75 @@ export const projects: Project[] = [
     ],
     playStoreUrl: 'https://play.google.com/store/apps/details?id=site.rand.emaniyat.prod',
     overview:
-      'Emaniyat is an Islamic lifestyle companion combining a Quran reader, prayer times, a Qibla compass, and a digital library. It ships a full 604-page Mushaf reader with multi-reciter, ayah-level audio streaming, location-based prayer and reminder notifications, and subscription flows.',
+      'Emaniyat is a full-featured Islamic lifestyle mobile app built in Flutter for iOS and Android. It combines daily worship tools — prayer times, adhan notifications, azkar, duas, and a digital tasbih — with a complete Quran reading experience, Islamic utilities, and a digital library of books, all in a bilingual Arabic/English interface with RTL-first design.\n\nThe app is architected as 20+ modular feature modules (auth, quran, azan, library, subscription, etc.) with GetX state management, GetIt dependency injection, and a Dio REST client with token refresh and centralized error handling. It integrates Firebase push notifications, background file downloads, timezone-aware local notification scheduling, and Paymera payment gateway for subscription flows.',
+    featureSections: [
+      {
+        title: 'Prayer & Worship',
+        items: [
+          'Prayer times dashboard — live countdown, daily schedule, and city-based times from backend API',
+          'Adhan notifications — scheduled local notifications per prayer with customizable sounds',
+          'Pre-prayer reminders with configurable minutes and multi-day scheduling (premium flow)',
+          'Dedicated Azan tab with full prayer list and toggle controls for adhan and reminders',
+        ],
+      },
+      {
+        title: 'Holy Quran',
+        items: [
+          'Full 604-page Mushaf reader with Uthmanic Hafs typography and adjustable font size',
+          'Audio recitation — multiple reciters, ayah-by-ayah or full-surah playback with mini player',
+          'Offline audio — download surahs by reciter with progress tracking',
+          'Ayah search across translations, Arabic tafsir (Jalalayn), and bookmark/favorite sync',
+          'Navigation — jump to surah, juz, or page',
+        ],
+      },
+      {
+        title: 'Dhikr & Spirituality',
+        items: [
+          'Azkar & duas — categorized supplications from API with favorites synced to backend',
+          'Zikr counter with per-dhikr repetition tracking on detail screens',
+          'Digital Tasbih (Masbaha) — custom dhikr text, target count, haptic feedback, persisted state',
+          '99 Names of Allah — browse names with detail views',
+        ],
+      },
+      {
+        title: 'Islamic Tools',
+        items: [
+          'Qibla compass — real-time direction using device sensors + GPS, distance to Kaaba',
+          'Hijri/Gregorian calendar toggle with Islamic events loaded from API',
+          'Zakat calculator — multi-currency/asset inputs (SYP, USD, gold) with conversion rates',
+        ],
+      },
+      {
+        title: 'Digital Library',
+        items: [
+          'Islamic book library — categories, paginated listings, and book details',
+          'In-app PDF reader (Syncfusion) with reading progress synced to backend',
+          'Background book-part downloads with system notifications and offline access',
+          'Favorite books saved in user profile',
+        ],
+      },
+      {
+        title: 'Account & Subscriptions',
+        items: [
+          'Authentication — register, login, OTP verification, password reset, and account deletion',
+          'User profile — name, city, subscription status, downloads, and favorites hub',
+          'Premium bundles from backend with promo codes, auto-renewal, and cancellation',
+          'Paymera payment gateway via WebView + deep-link callback',
+          'Multi-step onboarding flow for first-time users',
+        ],
+      },
+      {
+        title: 'Architecture & Platform',
+        items: [
+          'Modular GetX + GetIt architecture with 20+ feature modules',
+          'Dio REST client with token refresh, LRU file-bytes cache, and secure JWT storage',
+          'Firebase Core + FCM with background message handler and deep-link routing',
+          'Background downloads (background_downloader) and background audio (just_audio + audio_service)',
+          'Timezone-aware local notifications, connectivity awareness, and app update checks',
+          'Custom Arabic typography, ARB-based i18n, dark/light themes, and responsive UI (ScreenUtil)',
+        ],
+      },
+    ],
   },
   {
     slug: 'taverna',
@@ -273,10 +447,10 @@ export const projects: Project[] = [
     company: 'Doodles Agency',
     period: '',
     tagline:
-      'Product marketplace with rich ad postings, account-to-store conversion, and in-app text & voice chat.',
+      'Cross-platform food delivery app for GCC/MENA markets with restaurant discovery, maps-based address selection, and secure auth.',
     summary:
-      'A product-marketplace app supporting rich ad postings (images, video, categories, pricing, geolocation) with account-to-store conversion, in-app text and voice chat, and social sharing — attracting 300+ listings within the launch month.',
-    tech: ['Flutter', 'GetX', 'REST API', 'Google Maps'],
+      'A cross-platform food delivery app in Flutter targeting GCC/MENA markets — featuring restaurant discovery, category filtering, Google Maps delivery flow with GPS and geocoding, secure auth token storage, and Clean Architecture with BLoC, GetIt DI, and Retrofit/Dio REST integration.',
+    tech: ['Flutter', 'Dart', 'BLoC', 'Clean Architecture', 'GoRouter', 'GetIt', 'Retrofit', 'Google Maps'],
     logo: '/logos/taverna.png',
     gradient: 'from-red-500 to-red-400',
     images: [
@@ -286,7 +460,47 @@ export const projects: Project[] = [
       '/taverna/Taverna (4).png',
     ],
     overview:
-      'QuickSale is a product-marketplace app enabling rich ad postings with images, video, categories, pricing, and geolocation. Sellers can convert a personal account into a store, while buyers and sellers communicate through in-app text and voice chat plus social sharing. The platform attracted 300+ listings within its launch month.',
+      'Taverna is a cross-platform food delivery app built in Flutter for Android and iOS, targeting GCC and MENA markets. It enables users to discover restaurants, browse categories, and manage delivery addresses through an integrated Google Maps flow with GPS location, drag-to-pin geocoding, and address search.\n\nThe codebase follows Clean Architecture (Domain / Data / Presentation) with BLoC state management, GetIt dependency injection, and type-safe REST API integration via Retrofit + Dio. Navigation uses GoRouter with a persistent bottom-tab shell across modular features — auth, home, categories, map, and addresses — with secure token storage, offline-aware network checks, and responsive UI built with ScreenUtil.',
+    featureSections: [
+      {
+        title: 'Restaurant Discovery',
+        items: [
+          'Home feed with carousel banners and horizontal restaurant/category scrollers',
+          'Category filtering and restaurant browsing',
+          'Custom design system — theme, colors, typography, and SVG assets',
+          'Responsive layouts with ScreenUtil across screen sizes',
+        ],
+      },
+      {
+        title: 'Maps & Delivery Addresses',
+        items: [
+          'Google Maps delivery flow with GPS location and drag-to-pin geocoding',
+          'Address search via Google Geocoding API',
+          'Geolocator integration for device location',
+          'Modular map and address management features',
+        ],
+      },
+      {
+        title: 'Authentication & Onboarding',
+        items: [
+          'User login and registration via REST API',
+          'Country selection with SharedPreferences persistence',
+          'Secure token storage with flutter_secure_storage',
+          'Form validation and international phone/nationality inputs',
+        ],
+      },
+      {
+        title: 'Architecture & Engineering',
+        items: [
+          'Clean Architecture with Repository pattern and Use Cases',
+          'BLoC with Equatable states and custom BlocObserver',
+          'GetIt service locator with modular DI registration',
+          'Retrofit + Dio with connectivity checks and typed Failure classes',
+          'GoRouter declarative navigation with persistent bottom-tab shell',
+          'DataState wrapper for server/network error mapping',
+        ],
+      },
+    ],
   },
   {
     slug: 'quicksale',
@@ -295,10 +509,10 @@ export const projects: Project[] = [
     company: 'Freelance Project',
     period: '',
     tagline:
-      'Product marketplace with rich ad postings, account-to-store conversion, and in-app text & voice chat.',
+      'Full-featured classifieds marketplace with ads, stores, real-time chat, reels, and bilingual AR/EN support.',
     summary:
-      'A product-marketplace app supporting rich ad postings (images, video, categories, pricing, geolocation) with account-to-store conversion, in-app text and voice chat, and social sharing — attracting 300+ listings within the launch month.',
-    tech: ['Flutter', 'GetX', 'REST API', 'Google Maps'],
+      'A full-featured classifieds marketplace app in Flutter with ads, stores, real-time Pusher chat, reels, and job/CV flows — featuring a multi-step ad creation wizard, dual user/store account modes, Firebase push notifications with deep linking, and bilingual Arabic/English RTL/LTR experience across 40+ screens.',
+    tech: ['Flutter', 'GetX', 'Pusher', 'Firebase', 'Google Maps', 'Crashlytics'],
     logo: '/logos/quick-sale.png',
     images: [
       '/quick-sale/Quick Sale (1).png',
@@ -310,7 +524,64 @@ export const projects: Project[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.mahairi.quicksale',
     appStoreUrl: 'https://apps.apple.com/us/app/quick-sale/id6753071419',
     overview:
-      'QuickSale is a product-marketplace app enabling rich ad postings with images, video, categories, pricing, and geolocation. Sellers can convert a personal account into a store, while buyers and sellers communicate through in-app text and voice chat plus social sharing. The platform attracted 300+ listings within its launch month.',
+      'QuickSale is a full-featured classifieds marketplace app built in Flutter, enabling users to browse and post ads, manage stores, chat in real time, share reels, and apply for jobs — all in a bilingual Arabic/English experience with full RTL/LTR support. The platform attracted 300+ listings within its launch month.\n\nThe app follows a layered architecture — presentation (UI + GetX controllers) → data (repos, DTOs, models) → core (services, config) — with repository pattern, GetX dependency injection, and Dio HTTP client with multipart uploads for images, videos, and chat attachments. It integrates Firebase (FCM push notifications, Crashlytics), Pusher for real-time messaging, and deep linking for ads, stores, users, and chat conversations.',
+    featureSections: [
+      {
+        title: 'Marketplace & Ads',
+        items: [
+          'Multi-step ad creation wizard with dynamic category filters and map-based location',
+          'Rich ad postings — images, video, categories, pricing, and geolocation',
+          'Dual user/store account modes with account-to-store conversion',
+          'Reviews, follow system, blocking, and reporting for trust & safety',
+          'Job/CV flows with document attachments',
+          'Guest mode with login prompts when authentication is required',
+        ],
+      },
+      {
+        title: 'Real-time Chat',
+        items: [
+          'Pusher-powered messaging with text, images, video, and voice messages',
+          'In-app notification center with typed notifications',
+          'Deep links route directly to ads, stores, users, and chat conversations',
+        ],
+      },
+      {
+        title: 'Media Handling',
+        items: [
+          'Image picker, cropper, and reorderable gallery for ad listings',
+          'Video player, thumbnail generation, trimming, and compression for reels',
+          'Cached network images/videos and shimmer skeleton loaders',
+          'File picker for documents (CV attachments, account files)',
+        ],
+      },
+      {
+        title: 'Maps & Location',
+        items: [
+          'Google Maps integration for ad/store location selection',
+          'Geolocator & geocoding for device location',
+          'Hierarchical location filtering — country → city → area',
+        ],
+      },
+      {
+        title: 'Notifications & Engagement',
+        items: [
+          'Firebase Cloud Messaging — foreground, background, and terminated states',
+          'Local notifications with bilingual title/body fallback',
+          'Deep linking via app_links for ads, stores, users, and chats',
+        ],
+      },
+      {
+        title: 'Architecture & Production',
+        items: [
+          'Layered architecture with repos, DTOs, and paginated API models across 40+ screens',
+          'GetX state management with centralized routing and navigation manager',
+          'Dio HTTP client with logging, token auth, and structured error handling',
+          'Local caching with GetStorage (auth, language, account mode)',
+          'Firebase Crashlytics, Facebook App Events with iOS ATT compliance',
+          'Environment config (.env), asset codegen (flutter_gen), and in-app update prompts',
+        ],
+      },
+    ],
   },
   {
     slug: 'goalatho',
@@ -319,10 +590,10 @@ export const projects: Project[] = [
     company: 'Personal Project',
     period: '',
     tagline:
-      'Paired consumer & business apps for sports-venue booking with Google Maps discovery and a bilingual UI.',
+      'Sports booking app to discover nearby football pitches, check real-time slot availability, and manage reservations.',
     summary:
-      'Paired consumer and business Flutter apps for a sports-venue booking platform, sharing a modular architecture and delivering end-to-end booking, Google Maps venue discovery, push notifications, and a bilingual (English/Arabic) UI.',
-    tech: ['Flutter', 'Dart', 'BLoC', 'Google Maps', 'Firebase', 'JWT'],
+      'A Flutter sports booking app enabling users to discover nearby football pitches, check real-time slot availability, and manage reservations end-to-end — with phone OTP auth, Firebase push notifications, Google Maps venue discovery, an offline tournament bracket system, and bilingual Arabic/English support.',
+    tech: ['Flutter', 'Dart', 'GetX', 'GetIt', 'Google Maps', 'Firebase', 'JWT'],
     logo: '/logos/goalatho.png',
     images: [
       '/goalatho/Goalatho (1).png',
@@ -333,7 +604,54 @@ export const projects: Project[] = [
       '/goalatho/Goalatho (6).png',
     ],
     overview:
-      'Goalatho is a sports-venue booking platform delivered as paired consumer and business apps that share a modular architecture. It supports end-to-end booking — search, slot availability, status tracking, and cancellation — alongside Google Maps venue discovery, FCM push with deep-link navigation, secure JWT storage, and a fully bilingual (English/Arabic) interface.',
+      'Goalatho is a Flutter sports booking app for iOS and Android that enables users to discover nearby football pitches, check real-time slot availability, and manage reservations end-to-end. It delivers location-aware pitch discovery using GPS, Google Maps, and backend-driven home feeds (trending, nearby, and new venues).\n\nThe app is built on a modular GetX architecture with feature modules (auth, home, search, bookings, teams, etc.), GetIt + GetX dependency injection, and a Dio API layer with pagination, filtering, sorting, and centralized error handling. It ships bilingual Arabic/English support with RTL layout, theme switching, and locale-aware API headers.',
+    featureSections: [
+      {
+        title: 'Venue Discovery & Booking',
+        items: [
+          'Discover nearby football pitches with GPS and Google Maps integration',
+          'Real-time slot availability and end-to-end reservation management',
+          'Backend-driven home feeds — trending, nearby, and new venues',
+          'Debounced search, pull-to-refresh, and pagination across listings',
+          'Booking status tracking and cancellation flows',
+        ],
+      },
+      {
+        title: 'Authentication',
+        items: [
+          'Phone registration with OTP verification and password reset',
+          'Secure JWT token storage with flutter_secure_storage',
+          'Session-aware navigation and automatic logout on invalid tokens',
+        ],
+      },
+      {
+        title: 'Notifications',
+        items: [
+          'Firebase Cloud Messaging with foreground/background handling',
+          'Local scheduled booking reminders',
+          'Type-based deep navigation from push notification payloads',
+        ],
+      },
+      {
+        title: 'Tournament System',
+        items: [
+          'Offline tournament bracket system with knockout generation',
+          'Team and logo management with local persistence',
+          'Championship data stored locally for offline access',
+        ],
+      },
+      {
+        title: 'Architecture & Platform',
+        items: [
+          'Feature-based modular GetX architecture with GetIt DI',
+          'Dio API client with auth tokens, request logging, and version/language headers',
+          'Firebase Core + Messaging with background message handlers',
+          'SharedPreferences + secure storage for app state and credentials',
+          'Skeleton loading, Lottie animations, and responsive design (ScreenUtil)',
+          'Environment config via dotenv, flutter_gen assets, and app version checking',
+        ],
+      },
+    ],
   },
   {
     slug: 'trucklink',
@@ -342,9 +660,9 @@ export const projects: Project[] = [
     company: 'Graduation Project',
     period: '',
     tagline:
-      'Logistics marketplace with shipment posting, real-time tracking, carrier verification, and an admin dashboard.',
+      'Logistics marketplace connecting shippers and carriers with real-time tracking, verification, and admin analytics.',
     summary:
-      'A logistics marketplace with shipment posting, real-time Google Maps tracking, carrier verification, and offer management — plus driver workflows (live tracking, order updates, invoicing) and an admin dashboard for approvals and analytics.',
+      'A logistics marketplace with shipment posting, real-time Google Maps tracking, carrier verification, and offer management — plus dedicated driver workflows (live tracking, order updates, invoicing) and an admin dashboard for approvals and analytics.',
     tech: ['Flutter', 'Google Maps', 'Firebase', 'BLoC'],
     logo: '/logos/trucklink.png',
     images: [
@@ -362,10 +680,10 @@ export const projects: Project[] = [
     company: 'Educational Project',
     period: '',
     tagline:
-      'Flutter puzzle game modeling gameplay as state-space search with six classic search algorithms.',
+      'AI-powered Flutter puzzle game implementing six classic search algorithms on the Lights Out state-space problem.',
     summary:
-      'A Flutter puzzle game that models gameplay as a state-space search problem, implementing six search algorithms (BFS, DFS, UCS, A*, Hill Climbing) with admissible heuristics, step-by-step solution playback, and complexity metrics.',
-    tech: ['Flutter', 'Dart', 'GetX', 'Algorithms'],
+      'An interactive mobile implementation of the classic Lights Out puzzle extended with artificial intelligence search algorithms — BFS, DFS, UCS, A*, and Hill Climbing — featuring custom heuristics, animated AI solution playback, customizable grid sizes, and performance metrics.',
+    tech: ['Flutter', 'Dart', 'GetX', 'AI Algorithms', 'Graph Search'],
     logo: '/logos/lights-out.png',
     images: [
       '/lights-out/Lights-out.jpg',
@@ -374,7 +692,48 @@ export const projects: Project[] = [
     ],
     githubUrl: 'https://github.com/Bassam-Jawish/Lights_out',
     overview:
-      'Lights Out is a Flutter puzzle game that treats each board configuration as a node in a state-space search. It implements six search algorithms — BFS, DFS, UCS, A*, and Hill Climbing — with admissible heuristics, then visualizes step-by-step solution playback and reports complexity metrics for each strategy. State is managed reactively with GetX behind a clean model/controller/view separation.',
+      'Lights Out is an interactive mobile implementation of the classic Lights Out puzzle, extended with a suite of artificial intelligence search algorithms. The project demonstrates translating a real-world puzzle into a formal search problem: each board configuration is a state, each tap is a transition, and the goal is reaching the all-off state.\n\nThe app implements BFS, DFS (iterative and recursive), UCS, A*, and Hill Climbing with path reconstruction, visited-state pruning, and multiple custom heuristic functions for informed search. It is architected with GetX and MVC for clean separation between game logic, AI solvers, and UI — featuring animated AI solution playback, customizable grid sizes, and performance metrics (moves, time, complexity stats).',
+    featureSections: [
+      {
+        title: 'Game & Puzzle Mechanics',
+        items: [
+          '2D boolean grid modeled as state-space search states with deep copy',
+          'Each board configuration is a node; each tap is an edge in the search graph',
+          'Custom setup dialog for board dimensions with dynamic grid UI',
+          'Move counter and timer tracking player and AI performance',
+          'Portrait-only orientation lock with transparent status bar',
+        ],
+      },
+      {
+        title: 'AI Search Algorithms',
+        items: [
+          'Breadth-First Search (BFS) for optimal shortest-path solutions',
+          'Depth-First Search — both iterative and recursive variants',
+          'Uniform Cost Search (UCS) for cost-weighted pathfinding',
+          'A* with admissible heuristics for informed optimal search',
+          'Hill Climbing with custom heuristic functions',
+          'Priority queues, stacks, and queues for different search strategies',
+          'Visited-state pruning and path reconstruction for all algorithms',
+        ],
+      },
+      {
+        title: 'UI/UX',
+        items: [
+          'Animated particle background on the home screen',
+          'Gradient effects for on/off lights with blinking fade animation on win',
+          'Animated AI solution playback — watch algorithms solve puzzles step by step',
+          'Material Design 3 theming and modern UI components',
+        ],
+      },
+      {
+        title: 'Architecture',
+        items: [
+          'GetX for reactive state management (Obx, Rx) and navigation',
+          'MVC-style structure — model/ (state, node), controller/ (logic + algorithms), view/ (UI)',
+          'Clean separation between game logic, AI solvers, and presentation layer',
+        ],
+      },
+    ],
   },
 ];
 

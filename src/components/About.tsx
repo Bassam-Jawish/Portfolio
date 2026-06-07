@@ -230,12 +230,28 @@ Specialized in Fintech and large-scale consumer products, Clean Architecture, MV
           <h3 className="section-title text-center mb-10">
             Tech <span className="gradient-text">Stack</span>
           </h3>
-          
-          <div className="relative flex items-center gap-2 sm:gap-4">
+
+          {/* Mobile: compact multi-row grid */}
+          <div className="sm:hidden grid grid-cols-3 min-[400px]:grid-cols-4 gap-2">
+            {skills.map((skill, index) => (
+              <div
+                key={`${skill.name}-${index}`}
+                className="skill-item skill-icon flex-col gap-1 p-2 rounded-xl min-h-[72px]"
+              >
+                <skill.icon className="w-5 h-5 text-primary" weight="light" />
+                <span className="text-[10px] font-medium text-muted-foreground text-center leading-tight line-clamp-2">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Tablet & desktop: horizontal marquee */}
+          <div className="relative hidden sm:flex items-center gap-2 sm:gap-4">
             {/* Left Arrow */}
             <button
               onClick={() => scrollSkills('left')}
-              className="flex-shrink-0 w-9 h-9 sm:w-12 sm:h-12 rounded-full glass-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-300 flex items-center justify-center group"
+              className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-300 flex items-center justify-center group"
               aria-label="Scroll left"
             >
               <CaretLeft className="w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground group-hover:text-primary transition-colors" weight="bold" />
@@ -252,10 +268,10 @@ Specialized in Fintech and large-scale consumer products, Clean Architecture, MV
                 {[...skills, ...skills].map((skill, index) => (
                   <div
                     key={`${skill.name}-${index}`}
-                    className="skill-item flex-shrink-0 skill-icon flex-col gap-3 p-4 sm:p-6 w-28 sm:w-36"
+                    className="skill-item flex-shrink-0 skill-icon flex-col gap-2 sm:gap-3 p-3 sm:p-6 w-24 sm:w-36"
                   >
-                    <skill.icon className="w-9 h-9 sm:w-12 sm:h-12 text-primary" weight="light" />
-                    <span className="text-xs sm:text-sm font-medium text-muted-foreground text-center leading-tight">
+                    <skill.icon className="w-8 h-8 sm:w-12 sm:h-12 text-primary" weight="light" />
+                    <span className="text-[11px] sm:text-sm font-medium text-muted-foreground text-center leading-tight">
                       {skill.name}
                     </span>
                   </div>
@@ -266,7 +282,7 @@ Specialized in Fintech and large-scale consumer products, Clean Architecture, MV
             {/* Right Arrow */}
             <button
               onClick={() => scrollSkills('right')}
-              className="flex-shrink-0 w-9 h-9 sm:w-12 sm:h-12 rounded-full glass-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-300 flex items-center justify-center group"
+              className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card border border-border/50 hover:border-primary/50 hover:shadow-glow transition-all duration-300 flex items-center justify-center group"
               aria-label="Scroll right"
             >
               <CaretRight className="w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground group-hover:text-primary transition-colors" weight="bold" />
