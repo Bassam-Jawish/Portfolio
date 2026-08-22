@@ -150,14 +150,14 @@ export const projects: Project[] = [
   {
     slug: 'dinarak',
     title: 'Dinarak',
-    category: 'E-Wallet App',
+    category: 'Digital Wallet',
     company: 'FikraTech',
     period: '',
     tagline:
-      'Secure digital wallet for Android & iOS with P2P transfers, bill payments, ATM withdrawals, and QR merchant payments.',
+      'Production Flutter fintech wallet for Jordan with eKYC, CliQ instant payments, eFawateercom bills, QR pay, and prepaid cards.',
     summary:
-      'A secure consumer e-wallet for Android and iOS covering wallet operations end-to-end — money transfers, eFAWATEERCOM bill payments, ATM withdrawals, and QR-based merchant payments — built on reusable BLoC/Cubit infrastructure with generic pagination and unified error handling.',
-    tech: ['Flutter', 'Dart', 'Firebase', 'BLoC/Cubit', 'REST API'],
+      'A production-grade digital wallet for the Jordan market — 36 Clean Architecture feature modules and ~1,740 Dart files — delivering eKYC onboarding, CliQ instant payments, eFawateercom bill pay, QR merchant payments, prepaid card lifecycle, and bank-grade security across Android, iOS, Windows, and Linux.',
+    tech: ['Flutter', 'Dart', 'BLoC/Cubit', 'Clean Architecture', 'GetIt', 'AutoRoute', 'ObjectBox', 'Firebase', 'IDWise'],
     logo: '/logos/dinarak.png',
     images: [
       '/dinarak/Dinarak (1).png',
@@ -170,7 +170,97 @@ export const projects: Project[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dinarak.fikratech.customer',
     appStoreUrl: 'https://apps.apple.com/us/app/dinarak/id6743640847',
     overview:
-      'Dinarak is a consumer e-wallet delivering core wallet operations: P2P money transfers, eFAWATEERCOM bill payments, ATM withdrawals, and QR-based merchant payments. It integrates banking APIs on top of a reusable BLoC/Cubit infrastructure with generic pagination and unified error handling, and contributed to a major redesign, performance improvements, and security enhancements.',
+      'Dinarak is a production digital-wallet and fintech app for the Jordan market, shipping as a single Flutter codebase for Android, iOS, Windows, and Linux. It covers the full money lifecycle — regulated eKYC onboarding, wallet management, CliQ instant payments, eFawateercom bills, QR merchant payments, prepaid cards, cash-in/cash-out, loans, and donations.\n\nThe app is engineered on Clean Architecture across 36 feature modules and ~80 routed screens (~1,740 Dart files), with bank-grade security: RSA-2048 request signing, SSL certificate pinning, biometric login, root/jailbreak detection, and encrypted credential storage.',
+    featureSections: [
+      {
+        title: 'Digital Wallet Core',
+        items: [
+          'Real-time wallet balance, account overview, and default-account selection',
+          'Transaction history with filters, details, and receipt-style views',
+          'Fees & limits transparency per service',
+          'Cash-in and cash-out flows via ATM and agent channels',
+          'Loan viewing, details, and repayment',
+        ],
+      },
+      {
+        title: 'CliQ Instant Payments',
+        items: [
+          'Send money via alias, phone number, or IBAN',
+          'Request money and return money for received transfers',
+          'Pending transaction management and approval flows',
+          'Beneficiary management with contact picker integration',
+          'CliQ alias CRUD and PIN-verified payment confirmation',
+        ],
+      },
+      {
+        title: 'Bills, QR & Merchant Payments',
+        items: [
+          'eFawateercom — inquiry, verification, pay, saved/unpaid bills, and history',
+          'Multi-service billing with dynamic service options and lookups',
+          'QR merchant payments via camera scan, purpose selection, and status tracking',
+          'Manual payments to merchants and participants',
+          'Merchant network browsing, service selection, and donations',
+        ],
+      },
+      {
+        title: 'Prepaid Card Lifecycle',
+        items: [
+          'View and manage multiple customer cards',
+          'Issue new cards with branch pickup, or link existing physical cards',
+          'Activation, freeze/unfreeze, PIN/CVC settings, and spending limits',
+          'Latest card transactions on the card screen with flip-card UI',
+        ],
+      },
+      {
+        title: 'Account, Identity & Onboarding',
+        items: [
+          'Multi-step registration with IDWise eKYC — ID scan, selfie/liveness, journey resume',
+          'Registration status tracking and PIN/password creation with validation',
+          'Phone + password login, biometric unlock, first-login identity spot-check',
+          'Safe-login on new devices, OTP for sensitive ops, and forget-password flow',
+          'Device-session management with remote terminate, plus route guards',
+        ],
+      },
+      {
+        title: 'Discovery & Support',
+        items: [
+          'Google Maps POI locator for branches and agents with clustering and dark map styling',
+          'Offline-capable POI list sync via ObjectBox, plus filter/search and geolocation',
+          'In-app notifications, offers, FAQ, contact-us, and privacy/terms PDF viewer',
+          'Arabic/English with full RTL support',
+        ],
+      },
+      {
+        title: 'Architecture & Scale',
+        items: [
+          'Clean Architecture across 36 feature modules (presentation → domain → data)',
+          '~80 routed screens and ~1,740 Dart files',
+          'BLoC/Cubit state management with GetIt DI per feature',
+          'Typed AutoRoute navigation with LoggedIn and FirstTime guards',
+          'fpdart Either<Failure, T> error handling and codegen (Freezed, AutoMappr, theme_tailor)',
+        ],
+      },
+      {
+        title: 'Security',
+        items: [
+          'RSA-2048 digital signatures on API requests (PointyCastle)',
+          'SSL certificate pinning per environment (dev / staging / prod)',
+          'Root/jailbreak detection at splash, screenshot blocking, and app-switcher privacy',
+          'Biometric login with biometric-change detection and secure credential storage',
+          'Device fingerprinting via UDID and reusable PIN verification across sensitive flows',
+        ],
+      },
+      {
+        title: 'Integrations & DevOps',
+        items: [
+          'Firebase Analytics & Crashlytics, Shorebird over-the-air updates',
+          'IDWise eKYC, Google Maps, Syncfusion PDF, and local biometric auth',
+          'Dio with interceptors, Hive API cache, ObjectBox, and flutter_secure_storage',
+          '4 build flavors — Dev / QA / Staging / Production via Flavorizr',
+          'Android, iOS, Windows, and Linux targets from a single codebase',
+        ],
+      },
+    ],
   },
   {
     slug: 'sahab',
