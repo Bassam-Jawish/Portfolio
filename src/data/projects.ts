@@ -380,6 +380,7 @@ export const projects: Project[] = [
       '/doremi/Doremi (6).png',
     ],
     playStoreUrl: 'https://play.google.com/store/apps/details?id=site.rand.doremi.prod',
+    appStoreUrl: 'https://apps.apple.com/us/app/doremi/id6806810463',
     overview:
       'DoReMi is a cross-platform music streaming app serving music, podcasts, radio, and video from a single Flutter codebase for Android and iOS. It ships bilingual (English/Arabic) support with full RTL layout, light/dark themes, and responsive UI — and doubled its user base within six months of release.\n\nThe app is engineered on Clean Architecture with 15+ feature modules and 100+ use cases separating business logic from UI, BLoC state management, dependency injection with GetIt, and functional error handling via dartz (Either/Failure pattern). The REST API layer uses Retrofit + Dio with code generation, session/auth interceptors, and environment-based configuration.',
     featureSections: [
@@ -459,6 +460,7 @@ export const projects: Project[] = [
       '/emaniyat/Emaniyat (6).png',
     ],
     playStoreUrl: 'https://play.google.com/store/apps/details?id=site.rand.emaniyat.prod',
+    appStoreUrl: 'https://apps.apple.com/us/app/emaniyat/id6806817222',
     overview:
       'Emaniyat is a full-featured Islamic lifestyle mobile app built in Flutter for iOS and Android. It combines daily worship tools — prayer times, adhan notifications, azkar, duas, and a digital tasbih — with a complete Quran reading experience, Islamic utilities, and a digital library of books, all in a bilingual Arabic/English interface with RTL-first design.\n\nThe app is architected as 20+ modular feature modules (auth, quran, azan, library, subscription, etc.) with GetX state management, GetIt dependency injection, and a Dio REST client with token refresh and centralized error handling. It integrates Firebase push notifications, background file downloads, timezone-aware local notification scheduling, and Paymera payment gateway for subscription flows.',
     featureSections: [
