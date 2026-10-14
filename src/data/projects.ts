@@ -49,7 +49,7 @@ export const projects: Project[] = [
       '/hawelli/Hawelli (5).png',
       '/hawelli/Hawelli (6).png',
     ],
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.fikratech.hawelli.business',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.fikratech.hawelli',
     overview:
       'Hawelli is a full digital-wallet and fintech platform shipping as both a consumer app and a dedicated business variant. It spans the entire money lifecycle — onboarding and eKYC, multi-wallet management, P2P and merchant payments over QR and NFC, bills, vouchers, loans, donations, and cash-in/cash-out through ATM and agent channels.\n\nThe app is engineered on Clean Architecture across 40+ feature modules and ~110 routed screens (~2,000 Dart files), with bank-grade security: RSA-2048 request signing, AES-GCM encrypted storage, certificate pinning, biometric/OTP authentication, and root/jailbreak detection.',
     featureSections: [
